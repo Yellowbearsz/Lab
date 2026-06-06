@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(User Class)"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/etUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"/>
+
+        <EditText
+            android:id="@+id/etUserId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID"
+            android:inputType="number"/>
+
+        <RadioGroup
+            android:id="@+id/rgUserType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginVertical="8dp">
+            <RadioButton
+                android:id="@+id/rbFreeUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Free User"
+                android:checked="true"
+                android:buttonTint="#6200EE"/>
+            <RadioButton
+                android:id="@+id/rbPremiumUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Premium User"
+                android:layout_marginStart="16dp"
+                android:buttonTint="#6200EE"/>
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/etMemberExpired"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="วันหมดอายุสมาชิก(เช่น2026-12-31)"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginVertical="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(Note Class)"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/etNoteTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title"/>
+
+        <RadioGroup
+            android:id="@+id/rgNoteType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginVertical="8dp">
+            <RadioButton
+                android:id="@+id/rbTextNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Text Note"
+                android:checked="true"
+                android:buttonTint="#6200EE"/>
+            <RadioButton
+                android:id="@+id/rbChecklistNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Checklist Note"
+                android:layout_marginStart="16dp"
+                android:buttonTint="#6200EE"/>
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/etNoteContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ใส่เนื้อหาข้อความโน๊ตที่นี่"
+            android:lines="3"
+            android:gravity="top"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="บันทึกข้อมูลโน๊ต"
+            android:background="#6200EE"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="24dp"/>
+    </LinearLayout>
+</ScrollView>
