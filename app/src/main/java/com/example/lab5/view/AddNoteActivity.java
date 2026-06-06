@@ -19,7 +19,6 @@ public class AddNoteActivity extends AppCompatActivity {
 
     private EditText etUserName, etUserId, etMemberExpired, etNoteTitle, etNoteContent;
     private RadioGroup rgUserType, rgNoteType;
-    private Button btnSave;
     private NoteController controller;
 
     @Override
@@ -37,9 +36,9 @@ public class AddNoteActivity extends AppCompatActivity {
         etNoteContent = findViewById(R.id.etNoteContent);
         rgUserType = findViewById(R.id.rgUserType);
         rgNoteType = findViewById(R.id.rgNoteType);
-        btnSave = findViewById(R.id.btnSave);
+        Button btnSave = findViewById(R.id.btnSave);
         rgUserType.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == R.id.rbPremiumUser) {
+            if (checkedId == R.id.rbSubscription) {
                 etMemberExpired.setVisibility(View.VISIBLE);
             } else {
                 etMemberExpired.setVisibility(View.GONE);
@@ -47,9 +46,9 @@ public class AddNoteActivity extends AppCompatActivity {
         });
         rgNoteType.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == R.id.rbChecklistNote) {
-                etNoteContent.setHint("ChecklistNote");
+                etNoteContent.setHint(R.string.hint_checklist_note);
             } else {
-                etNoteContent.setHint("ใส่เนื้อหาข้อความโน๊ตที่นี่");
+                etNoteContent.setHint(R.string.hint_note_content);
             }
         });
         btnSave.setOnClickListener(v -> {
@@ -59,18 +58,18 @@ public class AddNoteActivity extends AppCompatActivity {
             String content = etNoteContent.getText().toString().trim();
             String expiredDate = etMemberExpired.getText().toString().trim();
             if (name.isEmpty() || userId.isEmpty() || title.isEmpty() || content.isEmpty()) {
-                Toast.makeText(this, "กรุณากรอกข้อมูลสำคัญให้ครบถ้วน", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.error_fill_info, Toast.LENGTH_SHORT).show();
                 return;
             }
             String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
-            boolean isPremium = (rgUserType.getCheckedRadioButtonId() == R.id.rbPremiumUser);
+            boolean isPremium = (rgUserType.getCheckedRadioButtonId() == R.id.rbSubscription);
             boolean isChecklist = (rgNoteType.getCheckedRadioButtonId() == R.id.rbChecklistNote);
             if (isChecklist) {
                 controller.createCheckListNote(title, currentDate, content, name, userId, isPremium, expiredDate);
             } else {
                 controller.createTextNote(title, currentDate, content, name, userId, isPremium, expiredDate);
             }
-            Toast.makeText(this, "Savenote", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.msg_save_success, Toast.LENGTH_SHORT).show();
             finish();
         });
     }

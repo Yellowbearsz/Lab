@@ -12,7 +12,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="(User Class)"
+            android:text="@string/user_class_header"
             android:textStyle="bold"
             android:textSize="16sp"
             android:layout_marginBottom="8dp"/>
@@ -21,14 +21,17 @@
             android:id="@+id/etUserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name"/>
+            android:hint="@string/hint_name"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"/>
 
         <EditText
             android:id="@+id/etUserId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ID"
-            android:inputType="number"/>
+            android:hint="@string/hint_id"
+            android:inputType="number"
+            android:importantForAutofill="no"/>
 
         <RadioGroup
             android:id="@+id/rgUserType"
@@ -37,17 +40,17 @@
             android:orientation="horizontal"
             android:layout_marginVertical="8dp">
             <RadioButton
-                android:id="@+id/rbFreeUser"
+                android:id="@+id/rbGeneralPublic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Free User"
+                android:text="@string/label_general_public"
                 android:checked="true"
                 android:buttonTint="#6200EE"/>
             <RadioButton
-                android:id="@+id/rbPremiumUser"
+                android:id="@+id/rbSubscription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Premium User"
+                android:text="@string/label_subscription"
                 android:layout_marginStart="16dp"
                 android:buttonTint="#6200EE"/>
         </RadioGroup>
@@ -56,9 +59,11 @@
             android:id="@+id/etMemberExpired"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="วันหมดอายุสมาชิก(เช่น2026-12-31)"
+            android:hint="@string/hint_member_expired"
             android:visibility="gone"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp"
+            android:importantForAutofill="no"
+            android:inputType="date"/>
 
         <View
             android:layout_width="match_parent"
@@ -69,7 +74,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="(Note Class)"
+            android:text="@string/note_class_header"
             android:textStyle="bold"
             android:textSize="16sp"
             android:layout_marginBottom="8dp"/>
@@ -78,7 +83,9 @@
             android:id="@+id/etNoteTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Title"/>
+            android:hint="@string/hint_title"
+            android:importantForAutofill="no"
+            android:inputType="text"/>
 
         <RadioGroup
             android:id="@+id/rgNoteType"
@@ -90,14 +97,14 @@
                 android:id="@+id/rbTextNote"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Text Note"
+                android:text="@string/label_text_note"
                 android:checked="true"
                 android:buttonTint="#6200EE"/>
             <RadioButton
                 android:id="@+id/rbChecklistNote"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Checklist Note"
+                android:text="@string/label_checklist_note"
                 android:layout_marginStart="16dp"
                 android:buttonTint="#6200EE"/>
         </RadioGroup>
@@ -106,15 +113,17 @@
             android:id="@+id/etNoteContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ใส่เนื้อหาข้อความโน๊ตที่นี่"
+            android:hint="@string/hint_note_content"
             android:lines="3"
-            android:gravity="top"/>
+            android:gravity="top"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="บันทึกข้อมูลโน๊ต"
+            android:text="@string/btn_save_note"
             android:background="#6200EE"
             android:textColor="#FFFFFF"
             android:textStyle="bold"

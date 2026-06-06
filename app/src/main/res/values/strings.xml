@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Lab</string>
+    <string name="user_class_header">(User Class)</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_id">ID</string>
+    <string name="label_general_public">General Public</string>
+    <string name="label_subscription">Subscription</string>
+    <string name="hint_member_expired">วันหมดอายุสมาชิก(เช่น2026-12-31)</string>
+    <string name="note_class_header">(Note Class)</string>
+    <string name="hint_title">Title</string>
+    <string name="label_text_note">Text Note</string>
+    <string name="label_checklist_note">Checklist Note</string>
+    <string name="hint_note_content">ใส่เนื้อหาข้อความโน๊ตที่นี่</string>
+    <string name="btn_save_note">บันทึกข้อมูลโน๊ต</string>
+    <string name="error_fill_info">กรุณากรอกข้อมูลสำคัญให้ครบถ้วน</string>
+    <string name="msg_save_success">Savenote</string>
+    <string name="hint_checklist_note">ChecklistNote</string>
 </resources>
